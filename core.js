@@ -41,7 +41,7 @@ var ytool = {
      *
      */
     arrayUnique: function (arr) {
-        if (this.checkType(arr) !== 'Array') {
+        if (!(arr instanceof Array)) {
             return arr;
         }
         return arr.filter(function (item, idx, array) {
