@@ -62,9 +62,11 @@ var ytool = {
         }
         else {
             if (source instanceof Array) {
-                target = source.map(function (item) {
-                    return arguments.callee(item);
-                });
+                target = [];
+                for (var j = 0, len = source.length; j < len; j++) {
+                    var tmp = source[j];
+                    target.push(arguments.callee(tmp));
+                }
             }
             else {
                 target = {};
@@ -77,5 +79,4 @@ var ytool = {
         }
         return target;
     }
-
 };
