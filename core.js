@@ -34,7 +34,7 @@ var ytool = {
     },
 
     /**
-     * Array unique
+     * array unique
      *
      * @param {Array} arr the array need to be unique
      * @return {Array} new array
@@ -47,6 +47,35 @@ var ytool = {
         return arr.filter(function (item, idx, array) {
             return array.indexOf(item) === idx;
         });
+    },
+
+    /**
+     * deep clone
+     *
+     * @param {any} source the parameter need to clone
+     * @return {any} a new parameter
+     */
+    deepClone: function (source) {
+        var target = undefined;
+        if (typeof source !== 'object') {
+            target = source;
+        }
+        else {
+            if (source instanceof Array) {
+                target = source.map(function (item) {
+                    return arguments.callee(item);
+                });
+            }
+            else {
+                target = {};
+                for (var i in source) {
+                    if (source.hasOwnProperty(i)) {
+                        target[i] = arguments.callee(source[i]);
+                    }
+                }
+            }
+        }
+        return target;
     }
 
 };
