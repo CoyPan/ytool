@@ -78,5 +78,22 @@ var ytool = {
             }
         }
         return target;
+    },
+
+    /**
+     * change object to string
+     * 
+     * @param {Object} data the object need to change
+     * @return {string}
+     */
+    object2String: (data) => {
+        let params = '';
+        if (data && Object.prototype.toString.call(data) === '[object Object]') {
+            let paramsArr = Object.keys(data).map((item) => {
+                return item + '=' + encodeURIComponent(data[item]);
+            });
+            params += paramsArr.join('&');
+        }
+        return params;
     }
 };
