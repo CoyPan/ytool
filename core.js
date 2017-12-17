@@ -86,7 +86,7 @@ var ytool = {
      * @param {Object} data the object need to change
      * @return {string}
      */
-    object2String: (data) => {
+    object2String: function (data) {
         let params = '';
         if (data && Object.prototype.toString.call(data) === '[object Object]') {
             let paramsArr = Object.keys(data).map((item) => {
@@ -95,5 +95,54 @@ var ytool = {
             params += paramsArr.join('&');
         }
         return params;
+    },
+
+    /**
+     * detect ua 
+     */
+    uaDetect: function () {
+        var ua = window.navigator.userAgent;
+
+        // detect if the browser is safari
+        var detectSafari = function () {
+            /* eslint-disable max-len */
+            var ret = ua.match(/(MSIE|(?!Gecko.+)Firefox|(?!AppleWebKit.+Chrome.+)Safari|(?!AppleWebKit.+)Chrome|AppleWebKit(?!.+Chrome|.+Safari)|Gecko(?!.+Firefox))(?: |\/)([\d\.apre]+)/);
+            var likeSafari = false;
+            if (ret && ret[1] && ret[1].toLowerCase() === 'safari') {
+                likeSafari = true;
+            }
+            /* eslint-disable max-len */
+            if (likeSafari && !/CriOS|UCBrowser|fxiOS|QHBrowser|MQQBrowser|baidubrowser|MicroMessenger|SogouMobileBrowser/i.test(ua)) {
+                return true;
+            }
+            return false;
+        }
+
+        var isIOS = /iPhone/i.test(ua) || /iPod/i.test(ua);
+        var isIOS9 = isIOS && /OS (?:9|10|11|12)_\d[_\d]* like Mac OS X/i.test(ua);
+        var isAndroid = /android/i.test(ua);
+        var isQQBrowser = /MQQBrowser/i.test(ua);
+        var isWeChat = /MicroMessenger/i.test(ua);
+        var isMobileQQ = /^(?!.*Safari).*QQ/.test(ua);
+        var isHaoKan = /haokan(.*)/.test(ua);
+        var isSafari = detectSafari();
+        var isIOS8 = /OS (?:8)_\d[_\d]* like Mac OS X/i.test(ua);
+        var isUC = /UCBrowser|UCWeb/i.test(ua);
+        var isFireFox = /Firefox/i.test(ua) || /fxiOS/i.test(ua);
+        
+        return {
+            ua: ua,
+            isIOS: isIOS,
+            isIOS8: isIOS8,
+            isIOS9: isIOS9,
+            isAndroid: isAndroid,
+            isQQBrowser: isQQBrowser,
+            isWeChat: isWeChat,
+            isMobileQQ: isMobileQQ,
+            isHaoKan: isHaoKan,
+            isSafari: isSafari,
+            isUC: isUC,
+            isFireFox: isFireFox
+        };
     }
 };
