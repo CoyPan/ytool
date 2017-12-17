@@ -87,7 +87,7 @@ var ytool = {
      * @return {string}
      */
     object2String: function (data) {
-        let params = [];
+        var params = [];
         if (data && Object.prototype.toString.call(data) === '[object Object]') {
             for (var i in data) {
                 if (data.hasOwnProperty(i)) {
