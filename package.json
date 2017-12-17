@@ -1,0 +1,25 @@
+{
+  "name": "ytool",
+  "version": "1.0.0",
+  "description": "a simple javascript library for daily development",
+  "main": "core.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CoyPan/ytool.git"
+  },
+  "keywords": [
+    "deepclone",
+    "uadetect",
+    "Common",
+    "function"
+  ],
+  "author": "coypan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/CoyPan/ytool/issues"
+  },
+  "homepage": "https://github.com/CoyPan/ytool#readme"
+}
