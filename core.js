@@ -87,14 +87,15 @@ var ytool = {
      * @return {string}
      */
     object2String: function (data) {
-        let params = '';
+        let params = [];
         if (data && Object.prototype.toString.call(data) === '[object Object]') {
-            let paramsArr = Object.keys(data).map((item) => {
-                return item + '=' + encodeURIComponent(data[item]);
-            });
-            params += paramsArr.join('&');
+            for (var i in data) {
+                if (data.hasOwnProperty(i)) {
+                    params.push(i + '=' + encodeURIComponent(data[i]));
+                }
+            }
         }
-        return params;
+        return params.join('&');
     },
 
     /**
