@@ -88,9 +88,13 @@ a simple javascript library for daily development
 
   ```
     /**
-       * A decorator function. Trigger the [func] during every [wait] milliseconds.
-       * if you'd like to disable the execution on the leading edge, pass [options={leading: false}];
-       * if you'd like to disable the execution on the trailing edge, pass [options={trailing: false}];
+        * A decorator function. Trigger the [func] during every [wait] milliseconds.
+        * if you'd like to disable the execution on the leading edge, pass [options={leading: false}];
+        * if you'd like to disable the execution on the trailing edge, pass [options={trailing: false}];
+        * 
+        * @param {Function} func
+        * @param {number} wait
+        * @param {Object} options 
     */
   ```
 
