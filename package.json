@@ -1,6 +1,6 @@
 {
   "name": "ytool",
-  "version": "1.0.2",
+  "version": "1.0.4",
   "description": "a simple javascript library for daily development",
   "main": "core.js",
   "scripts": {
@@ -13,8 +13,8 @@
   "keywords": [
     "deepclone",
     "uadetect",
-    "Common",
-    "function"
+    "debounce",
+    "common function"
   ],
   "author": "coypan",
   "license": "MIT",
