@@ -95,7 +95,9 @@ a simple javascript library for daily development
         * @param {Function} func
         * @param {number} wait
         * @param {Object} options 
-    */
+        * 
+        * @return {Function}  
+     */
   ```
 
   ​

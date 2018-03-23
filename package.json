@@ -1,8 +1,8 @@
 {
   "name": "ytool",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "a simple javascript library for daily development",
-  "main": "core.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
