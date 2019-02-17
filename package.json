@@ -1,6 +1,6 @@
 {
   "name": "ytool",
-  "version": "1.0.7",
+  "version": "1.1.0",
   "description": "a simple javascript library for daily development",
   "main": "index.js",
   "scripts": {
